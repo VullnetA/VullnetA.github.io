@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Marker-based AR with A-Frame and AR.js</title>
+    <title>Combined AR with A-Frame and AR.js</title>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://ar-js-org.github.io/AR.js/aframe/build/aframe-ar.js"></script>
   </head>
   <body style="margin: 0px; overflow: hidden">
     <!-- AR Scene -->
-    <a-scene embedded arjs="trackingMethod: best;">
-      <!-- Hiro Marker -->
+    <a-scene embedded arjs="sourceType: webcam; trackingMethod: best;">
+      <!-- Hiro Marker for Marker-Based AR -->
       <a-marker preset="hiro">
         <!-- Blue Cube -->
         <a-box
@@ -29,6 +29,31 @@
           color="blue"
         ></a-cylinder>
       </a-marker>
+
+      <!-- Location-Based AR -->
+      <!-- Red Sphere at specific latitude and longitude -->
+      <a-sphere
+        gps-entity-place="latitude: 41.788889; longitude: 20.897778"
+        material="color: red"
+        radius="1"
+      ></a-sphere>
+
+      <!-- Red Cube -->
+      <a-box
+        gps-entity-place="latitude: 41.788889; longitude: 20.897778"
+        material="color: red"
+        depth="1"
+        height="1"
+        width="1"
+      ></a-box>
+
+      <!-- Red Cylinder -->
+      <a-cylinder
+        gps-entity-place="latitude: 41.788889; longitude: 20.897778"
+        material="color: red"
+        height="2"
+        radius="0.5"
+      ></a-cylinder>
 
       <!-- Camera -->
       <a-entity camera></a-entity>
