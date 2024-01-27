@@ -18,26 +18,6 @@
       arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false"
       renderer="antialias: true; alpha: true"
     >
-      <a-marker preset="hiro">
-        <!-- Blue Cube -->
-        <a-box
-          position="0 0.5 0"
-          rotation="0 45 45"
-          scale="0.5 0.5 0.5"
-          material="color: blue;"
-        ></a-box>
-
-        <!-- Blue Sphere -->
-        <a-sphere position="0 1.25 0" radius="0.25" color="blue"></a-sphere>
-
-        <!-- Blue Cylinder -->
-        <a-cylinder
-          position="0 -0.25 0"
-          height="0.5"
-          radius="0.25"
-          color="blue"
-        ></a-cylinder>
-      </a-marker>
       <a-camera gps-new-camera="gpsMinDistance: 5"></a-camera>
       <a-entity
         material="color: red"
@@ -58,8 +38,8 @@
         scale="1 1 1"
       ></a-entity>
     </a-scene>
-    <a href="index.html" style="position: absolute; top: 20px; left: 20px"
-      >Back to Menu</a
+    <a href="index2.html" style="position: absolute; top: 20px; left: 20px"
+      >Switch to Marker-Based</a
     >
   </body>
 </html>
