@@ -1,28 +1,36 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Combined AR Experience</title>
+    <title>Location-based AR</title>
     <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/three.js/build/ar-threex-location-only.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script
+      type="text/javascript"
+      src="https://raw.githack.com/AR-js-org/AR.js/master/three.js/build/ar-threex-location-only.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"
+    ></script>
   </head>
-  <body style="margin: 0px; overflow: hidden">
-    <!-- AR Scene -->
+  <body>
     <a-scene
-      embedded
-      arjs="trackingMethod: best; sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
       vr-mode-ui="enabled: false"
+      arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false"
       renderer="antialias: true; alpha: true"
     >
-      <!-- Hiro Marker -->
       <a-marker preset="hiro">
+        <!-- Blue Cube -->
         <a-box
           position="0 0.5 0"
           rotation="0 45 45"
           scale="0.5 0.5 0.5"
           material="color: blue;"
         ></a-box>
+
+        <!-- Blue Sphere -->
         <a-sphere position="0 1.25 0" radius="0.25" color="blue"></a-sphere>
+
+        <!-- Blue Cylinder -->
         <a-cylinder
           position="0 -0.25 0"
           height="0.5"
@@ -30,8 +38,7 @@
           color="blue"
         ></a-cylinder>
       </a-marker>
-
-      <!-- Location-based Entities -->
+      <a-camera gps-new-camera="gpsMinDistance: 5"></a-camera>
       <a-entity
         material="color: red"
         geometry="primitive: box"
@@ -50,9 +57,9 @@
         gps-new-entity-place="latitude: 41.788575; longitude: 20.897995"
         scale="1 1 1"
       ></a-entity>
-
-      <!-- Camera -->
-      <a-camera gps-new-camera="gpsMinDistance: 5"></a-camera>
     </a-scene>
+    <a href="index.html" style="position: absolute; top: 20px; left: 20px"
+      >Back to Menu</a
+    >
   </body>
 </html>
