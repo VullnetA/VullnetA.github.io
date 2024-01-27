@@ -2,30 +2,12 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Full-Screen AR.js Scene</title>
+    <title>AR.js with GPS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-    <style>
-      /* Set HTML and body to full height and width */
-      html,
-      body {
-        height: 100%;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-      }
-
-      /* Ensure a-scene element takes full screen */
-      a-scene {
-        display: block;
-        height: 100%;
-        width: 100%;
-      }
-    </style>
   </head>
-  <body>
+  <body style="margin: 0; overflow: hidden">
     <a-scene
       embedded
       arjs='sourceType: webcam; debugUIEnabled: false; trackingMethod: "geo";'
@@ -36,7 +18,7 @@
         color="red"
         position="0 0.5 0"
         scale="1 1 1"
-        gps-entity-place="latitude: 41.795041; longitude: 20.895663;"
+        gps-entity-place="latitude: [your-latitude]; longitude: [your-longitude];"
       ></a-box>
 
       <a-camera gps-camera rotation-reader></a-camera>
